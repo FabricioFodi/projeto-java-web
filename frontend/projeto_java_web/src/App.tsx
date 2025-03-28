@@ -75,26 +75,30 @@ function App() {
             });
         });
 
-    })
+        return () => {
+            document.addEventListener('mousemove', onMouseMove);
+            document.addEventListener('mouseup', onMouseUp);
+        };
+    }, []);
 
     return (
         <>
-            <div className="tabela">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nome</th>
-                            <th>E-mail</th>
-                            <th>Telefone</th>
-                            <th>Endereço</th>
-                            <th>Hobby</th>
-                            <th>Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {users.length > 0 ? (
-                            users.map((user) => (
+            <div className='tudo'>
+                <h1>Lista de Usuários CRUD</h1>
+                <div className="tabela">
+                    <table ref={tableRef}>
+                        <thead>
+                            <tr>
+                                {['ID', 'Nome', 'E-mail', 'Telefone', 'Endereço', 'Hobby', 'Ações'].map((col, index) => (
+                                    <th key={index}>
+                                        {col}
+                                        <div className='resizer'></div>
+                                    </th>
+                                ))}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {users.map((user) => (
                                 <tr key={user.id}>
                                     <td>{user.id}</td>
                                     <td>{user.nome}</td>
@@ -102,20 +106,14 @@ function App() {
                                     <td>{user.phone}</td>
                                     <td>{user.address}</td>
                                     <td>{user.hobby}</td>
-                                    <td>
-                                        <button onClick={() => alert(`Editar ${user.nome}`)}>Editar</button>
-                                    </td>
+                                    <td>✏️ ❌</td>
                                 </tr>
-                            ))
-                        ) : (
-                            <tr>
-                                <td colSpan={7}>Carregando usuários...</td>
-                            </tr>
-                        )}
-                    </tbody>
-                </table>
-            </div> {/* Fim da div tabela */}
-            <p>{message}</p>
+                            ))}
+                        </tbody>
+                    </table>
+                </div> {/* Fim da div tabela */}
+                <p>{message}</p>
+            </div>
         </>
     )
 }
