@@ -10,10 +10,7 @@ function App() {
             <HashRouter>
                 <Routes>
                     <Route path="/" element={<Main />} />
-                    <Route path="/cadastro" element={<NewUser/>} ></Route>
-                    <Route path=''></Route>
-                    <Route></Route>
-                    <Route></Route>
+                    <Route path="/cadastro" element={<NewUser/>} />
                 </Routes>
             </HashRouter> 
         </>

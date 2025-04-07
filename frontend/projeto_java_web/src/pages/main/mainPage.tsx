@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
-import './App.css'
+import { Link } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import './mainPage.css'
 
 function Main() {
     interface User {
@@ -113,6 +115,7 @@ function Main() {
                     </table>
                 </div> {/* Fim da div tabela */}
                 <p>{message}</p>
+                <button className='cadastraUser'><Link to='/cadastro'>Cadastrar Usuario</Link></button>
             </div>
         </>
     )

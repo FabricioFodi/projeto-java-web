@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { toast } from "react-toastify";
 
 function NewUser() {
 
@@ -17,11 +18,19 @@ useEffect(() => {
                     address: (document.getElementById('nome') as HTMLInputElement).value,
                     hobby: (document.getElementById('nome') as HTMLInputElement).value
                 })
-            })
-
-        }catch(erro) {}
+            });
+            const data = await response.json();
+            if (!response.ok) {
+                throw new Error('Erro na resposta do servidor');
+            }
+            toast.success('Usuário cadastrado com sucesso!');
+            console.log(data);
+        } catch (erro) {
+            toast.error('Erro ao cadastrar usuário!');
+            console.error(erro);
+        }
     }
-})
+});
 
     return (
         <>
