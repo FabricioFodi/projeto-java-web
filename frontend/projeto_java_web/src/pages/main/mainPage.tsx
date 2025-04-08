@@ -13,7 +13,6 @@ function Main() {
         hobby: string;
     }
 
-    const [message, setMessage] = useState('');
     const [users, setUsers] = useState<User[]>([]);
     const tableRef = useRef<HTMLTableElement>(null);
 
@@ -33,10 +32,10 @@ function Main() {
                     throw new Error('Erro na resposta do servidor');
                 }
                 setUsers(data);
-                setMessage('Conexão com o banco de dados bem sucedida')
+                toast.success('Conexão com o banco de dados bem sucedida', {autoClose: 3000});
             }
             catch (erro) {
-                setMessage('Erro ao conectar com o banco de dados')
+                toast.error('Erro ao conectar com o banco de dados', {autoClose: 3000});
             }
         };
 
@@ -114,7 +113,6 @@ function Main() {
                         </tbody>
                     </table>
                 </div> {/* Fim da div tabela */}
-                <p>{message}</p>
                 <button className='cadastraUser'><Link to='/cadastro'>Cadastrar Usuario</Link></button>
             </div>
         </>

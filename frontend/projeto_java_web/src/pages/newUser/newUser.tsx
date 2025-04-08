@@ -23,10 +23,10 @@ useEffect(() => {
             if (!response.ok) {
                 throw new Error('Erro na resposta do servidor');
             }
-            toast.success('Usuário cadastrado com sucesso!');
+            toast.success('Usuário cadastrado com sucesso!', { autoClose: 3000 });
             console.log(data);
         } catch (erro) {
-            toast.error('Erro ao cadastrar usuário!');
+            toast.error('Erro ao cadastrar usuário!', { autoClose: 3000 });
             console.error(erro);
         }
     }
@@ -38,13 +38,9 @@ useEffect(() => {
             <h1>Cadastro de Usuário</h1>
             <form className="formulario">
                 <input type="text" id="nome" placeholder="Nome Completo" name="nome" required />
-
                 <input type="email" id="email" placeholder="E-mail" name="email" required />
-
                 <input type="text" id="telefone" placeholder="Telefone: (11) 12345-6789" name="telefone"  />
-
                 <input type="text" id="address" placeholder="UF/País: SP, Brasil" name="address" />
-
                 <input type="text" id="hobby" placeholder="Hobby Favorito" name="hobby" />
 
                 <button >Cadastrar</button>
