@@ -1,10 +1,16 @@
-import { useEffect } from "react";
+import React, { useState } from "react";
 import { toast } from "react-toastify";
 
 function NewUser() {
+    const [nome, setNome] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setTelefone] = useState('');
+    const [address, setAddress] = useState('');
+    const [hobby, setHobby] = useState('');
 
-useEffect(() => {
-    const fetchCreateuser = async () => {
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+
         try {
             const response = await fetch('api/users', {
                 method: 'POST',
@@ -12,11 +18,11 @@ useEffect(() => {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    nome: (document.getElementById('nome') as HTMLInputElement).value,
-                    email: (document.getElementById('nome') as HTMLInputElement).value,
-                    telefone: (document.getElementById('nome') as HTMLInputElement).value,
-                    address: (document.getElementById('nome') as HTMLInputElement).value,
-                    hobby: (document.getElementById('nome') as HTMLInputElement).value
+                    nome,
+                    email,
+                    phone,
+                    address,
+                    hobby
                 })
             });
             const data = await response.json();
@@ -30,20 +36,19 @@ useEffect(() => {
             console.error(erro);
         }
     }
-});
 
     return (
         <>
         <div className="tabelaInput">
             <h1>Cadastro de Usuário</h1>
-            <form className="formulario">
-                <input type="text" id="nome" placeholder="Nome Completo" name="nome" required />
-                <input type="email" id="email" placeholder="E-mail" name="email" required />
-                <input type="text" id="telefone" placeholder="Telefone: (11) 12345-6789" name="telefone"  />
-                <input type="text" id="address" placeholder="UF/País: SP, Brasil" name="address" />
-                <input type="text" id="hobby" placeholder="Hobby Favorito" name="hobby" />
+            <form className="formulario" onSubmit={handleSubmit}>
+                <input type="text" id="nome" placeholder="Nome Completo" value={nome} onChange={(e) => setNome(e.target.value)} required />
+                <input type="email" id="email" placeholder="E-mail" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                <input type="text" id="phone" placeholder="Telefone: (11) 12345-6789" value={phone} onChange={(e) => setTelefone(e.target.value)} />
+                <input type="text" id="address" placeholder="UF/País: SP, Brasil" value={address} onChange={(e) => setAddress(e.target.value)} />
+                <input type="text" id="hobby" placeholder="Hobby Favorito" value={hobby} onChange={(e) => setHobby(e.target.value)} />
 
-                <button >Cadastrar</button>
+                <button type="submit">Cadastrar</button>
             </form>
         </div>
         </>
