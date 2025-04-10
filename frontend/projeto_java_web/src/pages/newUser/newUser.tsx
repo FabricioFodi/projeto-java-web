@@ -1,7 +1,18 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
+import { useParams, useNavigate } from "react-router-dom";
+
+interface UserData {
+    nome: string;
+    email: string;
+    phone: string;
+    address: string;
+    hobby: string;
+}
 
 function NewUser() {
+    const { id } = useParams();
+    const navigate = useNavigate();
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setTelefone] = useState('');
