@@ -11,6 +11,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Main />} />
                     <Route path="/cadastro" element={<NewUser/>} />
+                    <Route path='/editar/:id' element={<NewUser/>} />
                 </Routes>
             </HashRouter> 
         </>
