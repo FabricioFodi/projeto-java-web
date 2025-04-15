@@ -107,7 +107,7 @@ function Main() {
                                     <td>{user.phone}</td>
                                     <td>{user.address}</td>
                                     <td>{user.hobby}</td>
-                                    <td><a href="">✏️</a> <a href="">❌</a></td>
+                                    <td> <Link to={`/editar/${user.id}`}>✏️</Link> <a >❌</a></td>
                                 </tr>
                             ))}
                         </tbody>
