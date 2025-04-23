@@ -84,8 +84,8 @@ function Main() {
 
     return (
         <>
-            <div className='border 1px solid black'>
-                <h1>Lista de Usuários CRUD</h1>
+            <div className='flex flex-col gap-16 items-center'>
+                <h1 className='text-5xl font-semibold'>Lista de Usuários CRUD</h1>
                 <table ref={tableRef} className="w-full border-collapse border border-slate-400">
                     <thead>
                         <tr>
@@ -116,7 +116,7 @@ function Main() {
                         ))}
                     </tbody>
                 </table>
-                <button className='cadastraUser'><Link to='/cadastro'>Cadastrar Usuario</Link></button>
+                <button className=''><Link to='/cadastro'>Cadastrar Usuario</Link></button>
             </div>
         </>
     )
