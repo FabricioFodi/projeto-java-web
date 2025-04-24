@@ -43,6 +43,7 @@ function Main() {
     }, []);
 
 
+
     useEffect(() => {
         const table = tableRef.current;
         if (!table) return;
@@ -116,7 +117,8 @@ function Main() {
                         ))}
                     </tbody>
                 </table>
-                <button className=''><Link to='/cadastro'>Cadastrar Usuario</Link></button>
+                <button className='mt-4 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded shadow'>
+                    <Link to='/cadastro'>Cadastrar Usuario</Link></button>
             </div>
         </>
     )
