@@ -42,7 +42,28 @@ function Main() {
         fetchUsers();
     }, []);
 
+    const deleteUser = async (id: number) => {
+        const confirmDelete = window.confirm('em certeza que deseja excluir esse usuário?');
+        if (!confirmDelete) return;
 
+        try {
+            const response = await fetch(`api/users/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+
+            if (!response.ok) {
+                throw new Error('Erro ao excluir usuário');
+            }
+
+            setUsers(prevUsers => prevUsers.filter(user => user.id !== id));
+            toast.success('Usuário excluído com sucesso', { autoClose: 3000 });
+        } catch (error) {
+            toast.error('Erro ao excluir usu´rio', { autoClose: 3000 });
+        }
+    };
 
     useEffect(() => {
         const table = tableRef.current;
@@ -111,7 +132,10 @@ function Main() {
                                 <td className="px-2 py-1 border border-gray-300 relative">{user.address}</td>
                                 <td className="px-2 py-1 border border-gray-300 relative">{user.hobby}</td>
                                 <td className="px-2 py-1 border border-gray-300 relative">
-                                    <Link to={`/editar/${user.id}`}>✏️</Link> <a>❌</a>
+                                    <Link to={`/editar/${user.id}`}>✏️</Link>
+                                    <button
+                                        onClick={() => deleteUser(user.id)}
+                                        className='ml-2 text-red-600 hover:text-red-600'>❌</button>
                                 </td>
                             </tr>
                         ))}

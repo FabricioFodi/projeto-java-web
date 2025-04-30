@@ -87,17 +87,58 @@ function NewUser() {
 
     return (
         <>
-            <div className="tabelaInput">
-                <h1>{isEdtiting ? 'Editar Usuário' : 'Cadastro de usuário'}</h1>
-                <form className="formulario" onSubmit={handleSubmit}>
-                    <input type="text" id="nome" placeholder="Nome Completo" value={nome} onChange={(e) => setNome(e.target.value)} required />
-                    <input type="email" id="email" placeholder="E-mail" value={email} onChange={(e) => setEmail(e.target.value)} required />
-                    <input type="text" id="phone" placeholder="Telefone: (11) 12345-6789" value={phone} onChange={(e) => setTelefone(e.target.value)} />
-                    <input type="text" id="address" placeholder="UF/País: SP, Brasil" value={address} onChange={(e) => setAddress(e.target.value)} />
-                    <input type="text" id="hobby" placeholder="Hobby Favorito" value={hobby} onChange={(e) => setHobby(e.target.value)} />
+            <div className=" flex items-center jsutify-center px-4">
+                <div className="bg-white shadow-lg rounded-2xl p-8 w-full max-w-md">
+                    <h1 className="text-3xl font-bold text-center mb-6">
+                        {isEdtiting ? 'Editar Usuário' : 'Cadastro de usuário'}
+                    </h1>
+                    <form className="space-y-4" onSubmit={handleSubmit}>
+                        <input
+                            type="text"
+                            id="nome"
+                            placeholder="Nome Completo"
+                            value={nome}
+                            onChange={(e) => setNome(e.target.value)}
+                            required
+                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="E-mail"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                        <input
+                            type="text"
+                            id="phone"
+                            placeholder="Telefone: (11) 12345-6789"
+                            value={phone}
+                            onChange={(e) => setTelefone(e.target.value)}
+                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                        <input
+                            type="text"
+                            id="address"
+                            placeholder="UF/País: SP, Brasil"
+                            value={address}
+                            onChange={(e) => setAddress(e.target.value)}
+                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                        <input
+                            type="text"
+                            id="hobby"
+                            placeholder="Hobby Favorito"
+                            value={hobby}
+                            onChange={(e) => setHobby(e.target.value)}
+                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
 
-                    <button type="submit">{isEdtiting ? 'Salvar Alterações' : 'Cadastrar'}</button>
-                </form>
+                        <button type="submit"
+                            className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition durtion-200">
+                            {isEdtiting ? 'Salvar Alterações' : 'Cadastrar'}</button>
+                    </form>
+                    <button onClick={() => navigate('/')} className="w-full mt-4 bg-gray-300 text-gray-700 py-2 rounded-md hover:bg-gray-400 transition duration-200">
+                        Voltar para página principal
+                    </button>
+                </div>
             </div>
         </>
     )
