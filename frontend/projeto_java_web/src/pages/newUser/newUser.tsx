@@ -132,10 +132,10 @@ function NewUser() {
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
 
                         <button type="submit"
-                            className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition durtion-200">
+                            className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition durtion-200 cursor-pointer">
                             {isEdtiting ? 'Salvar Alterações' : 'Cadastrar'}</button>
                     </form>
-                    <button onClick={() => navigate('/')} className="w-full mt-4 bg-gray-300 text-gray-700 py-2 rounded-md hover:bg-gray-400 transition duration-200">
+                    <button onClick={() => navigate('/')} className="w-full mt-4 bg-gray-300 text-gray-700 py-2 rounded-md hover:bg-gray-400 transition duration-200 cursor-pointer">
                         Voltar para página principal
                     </button>
                 </div>

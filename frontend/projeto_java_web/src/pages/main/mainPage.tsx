@@ -135,14 +135,15 @@ function Main() {
                                     <Link to={`/editar/${user.id}`}>✏️</Link>
                                     <button
                                         onClick={() => deleteUser(user.id)}
-                                        className='ml-2 text-red-600 hover:text-red-600'>❌</button>
+                                        className='ml-2 text-red-600 hover:text-red-600 cursor-pointer'>❌</button>
                                 </td>
                             </tr>
                         ))}
                     </tbody>
                 </table>
-                <button className='mt-4 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded shadow'>
-                    <Link to='/cadastro'>Cadastrar Usuario</Link></button>
+                <button className='mt-4 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded shadow cursor-pointer'>
+                    <Link to='/cadastro'>Cadastrar Usuario</Link>
+                </button>
             </div>
         </>
     )
