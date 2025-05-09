@@ -16,5 +16,5 @@ Foi usado as seguintes tecnologias no projeto:
 #
 Para mais detalhes, acesse as pastas do projeto e leia os respectivos arquivos README.md.  
 * [/backend](https://github.com/FabricioFodi/projeto-java-web/tree/main/backend)
-* [/frontend](https://github.com/FabricioFodi/projeto-java-web/tree/main/frontend)
+* [/frontend](https://github.com/FabricioFodi/projeto-java-web/tree/main/frontend/projeto_java_web)
 * [/database](https://github.com/FabricioFodi/projeto-java-web/tree/main/database)

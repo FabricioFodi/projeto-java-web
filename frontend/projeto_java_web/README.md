@@ -1,14 +1,22 @@
 # Frontend
 Neste arquivo você encontrará mais informações do que foi utilizado no Frontend do projeto.
 
-## Dependências
+## Framework
 Farei citação de todas as dependências do Frontend para melhor entendimento do projeto.
 
-##
+O Frontend utiliza um conjunto de 4 Frameworks modernos em sua criação, dentre eles:
+* [React](https://react.dev/) - Biblioteca JavaScript para construção de UI baseada em componentes
+* [TypeScript](https://www.typescriptlang.org/) - Superconjunto de Javascript para um desenvolvimento seguro e eficiente
+* [TailwindCSS](https://tailwindcss.com/) - Framework de CSS para estilização
+* [Vite](https://vite.dev/) - Ferramenta de construção do projeto
+
 
 ## Instalação
-Para instalar todas as dependências utilizadas no projeto podem ser instalados utilizando o comando:
+Para instalar todas as dependencias utilizadas no projeto podem ser instalados utilizando o comando:
 ```sh
-npm install
+
+npm  install
+
 ```
-Isso fará com que **npm** leia todos as dependências dentro do arquivo package.json e instale automaticamente
+Isso fará com que **npm** leia todos as dependencias dentro do arquivo package.json e instale automaticamente.
+#
