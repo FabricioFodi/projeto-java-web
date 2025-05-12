@@ -5,7 +5,7 @@ Este projeto faz parte de uma lista de exercícios que estou fazendo nas última
 Foi usado as seguintes tecnologias no projeto:
 
 ### Frontend
-
+* [React](https://react.dev/) - Biblioteca JavaScript para construção de UI baseada em componentes
 
 ### Backend
 * [Java](https://dev.java/) - Linguagem de programação para tratar as requisições HTTP e as regras de negócio
