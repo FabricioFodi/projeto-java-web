@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { useParams, useNavigate } from "react-router-dom";
+import '../../App.css';
 
 interface UserData {
     nome: string;
@@ -77,6 +78,7 @@ function NewUser() {
             if (!isEdtiting) {
                 navigate('/');
             }
+            navigate('/');
         } catch (error) {
             toast.error(`Erro ao ${isEdtiting ? 'atualizar' : 'cadastrar'} usuário!`, { autoClose: 3000 });
             console.error(error);

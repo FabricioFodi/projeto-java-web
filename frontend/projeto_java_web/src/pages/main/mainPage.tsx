@@ -1,7 +1,7 @@
-import { useState, useRef, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { toast } from 'react-toastify'
-import './mainPage.css'
+import { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import '../../App.css';
 
 function Main() {
     interface User {
